@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('intro');
             $table->text('body1');
             $table->integer('featured');
+            $table->string('photo')->nullable();
             $table->text('body2')->nullable();
             $table->text('body3')->nullable();
             $table->text('body4')->nullable();

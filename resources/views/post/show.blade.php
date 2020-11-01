@@ -32,17 +32,19 @@
       <div class="post-image"> 
              <div>
                  <img src="{{ asset('storage/' . $post->image1)}}" class="img" alt="Image1">
+                    <p>{{$post->photo}}</p>
               </div>
           </div> 
      @endif   
 
+     @if ($post->body1)
          <div class="post-title">
           <a href="#"></a>
             <p>
             {!!$post->body1!!} 
           </p>
          </div>
-             
+          @endif   
          @if ($post->image2)    
       <div class="post-image"> 
              <div>

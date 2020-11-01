@@ -67,7 +67,8 @@ input[type=submit]:hover {
 }
 </style>
 <script src="https://cdn.tiny.cloud/1/vex7vm9qjpv0z3y7kcjble3pbkc2osw2rg0qyzf0iwxe5v2p/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script>tinymce.init({selector:'textarea',  plugins: 'link'
+<script>tinymce.init({selector:'textarea',
+      plugins: 'link'
 });</script>
 @endsection
 
@@ -89,6 +90,9 @@ input[type=submit]:hover {
     <label for="title">Title</label>
     <input type="text" id="fname" name="title" placeholder="title.." value="{{ old('title')}}">
      <p style="color: red; font-size:20px ;">@error('title') {{$message}} @enderror</p>
+    <label for="photo description">photo Description</label>
+    <input type="text" id="fname" name="photo" placeholder="photo Description.." value="{{ old('photo')}}">
+     <p style="color: red; font-size:20px ;">@error('photo') {{$message}} @enderror</p>
     <label for="slug">Slug</label>
     <input type="text" id="fname" name="slug" placeholder="slug.." value="{{ old('slug')}}">
     <p style="color: red; font-size:20px ;">@error('slug') {{$message}} @enderror</p>
@@ -106,7 +110,7 @@ input[type=submit]:hover {
     <p style="color: red; font-size:20px ;">@error('image1') {{$message}} @enderror</p>
 
     <label for="Body">Body 2</label>
-    <textarea id="subject" name="body2" placeholder="body2.." style="height:200px">{{ old('body2')}}</textarea>
+    <textarea id="subject" name="body2" style="height:200px">{{ old('body2')}}</textarea>
     <p style="color: red; font-size:20px ;">@error('body2') {{$message}} @enderror</p>
 
     <label for="image">Image 2</label>

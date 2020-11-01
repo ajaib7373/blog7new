@@ -39,7 +39,7 @@ return view('post.index', [
 
       $tags= Tag::InRandomOrder()->has('posts')->limit(10)->get();
 
-      $posts = Post::latest()->take(7)->get();
+      $posts = Post::latest()->take(3)->get();
       return view('post.show', ['post' => $post, 'posts' => $posts, 'tags'=>$tags]);
 
    }
@@ -114,10 +114,11 @@ private function validateRequest() {
        'category_id' => 'required',
        'user_id' => 'required',
        'featured' => 'required',
-       Purifier::clean('body1')=> 'required',
+       'photo' => 'nullable',  
+    Purifier::clean('body1')  => 'required',
       Purifier::clean('body2')  => 'sometimes',
       Purifier::clean('body3')  => 'sometimes',
-      Purifier::clean('body4')  => 'sometimes',
+     Purifier::clean( 'body4')  => 'sometimes',
       Purifier::clean('body5')  => 'sometimes',
        'image1' => 'sometimes|file|image|max:5000',
        'image2' => 'sometimes|file|image|max:5000',
@@ -127,6 +128,9 @@ private function validateRequest() {
     
     ]);
     
+   
+
+
     return $validateddata;        
     
     }
